@@ -2,3 +2,5 @@
 /ipynb/.ipynb_checkpoints/
 *.pyc
 config.yaml
+*.log
+*.out
