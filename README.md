@@ -15,8 +15,9 @@
 These two applications will allow those without smartphones to be able to get real-time notifications of events that previously required frequent checking of the computer. The hope is to make the playing ground between smartphone users and normal phone users more even when it comes to applying for jobs.
 
 ###Todo
+A trello shows real-time to-do lists for this project, but the things may be cryptic since it is being actively used to remember things.
+https://trello.com/b/A5PvjmvT/jobs-phone  
 -  Better filtering for phone numbers, pay, etc.
--  System for inputting users
 -  Additional job sources
 -  Include posts that are in-person (don't require email, but aren't necessarily phone)
 -  Have not worked on any of the email to phone yet.
