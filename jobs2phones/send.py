@@ -1,5 +1,9 @@
 import smtplib
 import load
+import yaml
+
+with open('../config.yaml') as f:
+    cf = yaml.safe_load(f)
 
 def send_text(from_addrs,username,password,to_addrs,msg):
 
