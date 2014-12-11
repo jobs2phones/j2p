@@ -1,4 +1,4 @@
-#Computer To Phone To Employment
+#Jobs 2 Phones
 
 ###The first goal of this code is to allow people to receive notifications from job posting sites that are filtered to those respondable by phone.
 -  Read postings through RSS
@@ -22,7 +22,7 @@ These two applications will allow those without smartphones to be able to get re
 -  Have not worked on any of the email to phone yet.
 
 ###Installation
-sudo apt-get install python-pip python-dev postgresql-server-dev-all  
+sudo apt-get install git python-pip python-dev postgresql-server-dev-all  
 sudo pip install feedparser beautifulsoup4 pandas apscheduler pyyaml sqlalchemy psycopg2
 
 Rename config-example.yaml config.yaml and change variables appropriately.  
@@ -39,6 +39,7 @@ grant all privileges on database 'database' to 'user';
 python setup_schema.py  
 
 To log into postgres as this new user without also having to create a system user:
+- sudo apt-get install vim
 - sudo vim /etc/postgres/9.3/main/pg_hba.conf
 - Change 'peer' to 'md5'
 - sudo service postgresql restart
@@ -46,7 +47,7 @@ To log into postgres as this new user without also having to create a system use
 ###Running The Program
 scheduler.py is the python script that runs the program. There is a line in that python file with a parameter for setting how often to schedule the process.
 
-'python scheduler.py &' will run the process in the background.
+'nohup python scheduler.py &' will run the process in the background.
 ## Contact
 Stephen Suffian
 contact@jobs2phones.com
