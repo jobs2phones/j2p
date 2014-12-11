@@ -14,6 +14,7 @@ def send_from_database(Session):
     posts = load.read_new_data(Session)
     for post in posts:
         phone_numbers = load.read_interested_users(Session,post[1])
+        print phone_numbers
         for phone_number in phone_numbers:
             send_text(cf['fromaddr'],cf['username'],cf['password'],phone_number,post[0])
             load.mark_post(Session,post[0])
