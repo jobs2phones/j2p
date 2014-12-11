@@ -61,10 +61,9 @@ class UserExistChecker(object):
 class UserReader(object):
     def read(self,session, search_criteria):
         users = []
-        for search_term in search_criteria.split(' '):
-            if len(search_term)>0:
-                for i,user in enumerate(session.query(User).filter(User.search_criteria==search_term)):
-                    users.append(user.phone_number)
+        for i,user in enumerate(session.query(User).
+                filter(User.search_criteria.like('%'+search_criteria+'%'))):
+            users.append(user.phone_number)
         return users
 
 class PostInserter(object):
