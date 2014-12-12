@@ -9,5 +9,4 @@ from parse import *
 from load import *
 from scrape import *
 from send import *
-from scheduler import *
-from user_manager import *
+from user_manage import *

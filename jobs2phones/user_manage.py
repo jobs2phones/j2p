@@ -17,12 +17,19 @@ def parse_text_message_from_email(msg):
     '''
     text = {}
     text['sender'] = msg['from']
+    msg_body = ''
     if msg.is_multipart():
         for i,part in enumerate(msg.walk()):
             if part.get_content_type() =='text/plain':
                 msg_body = part.get_payload(decode=True)
+            elif part.get_content_type() =='text/html':
+                msg_soup = BeautifulSoup(part.get_payload(decode=True))
     else:
         msg_body = msg.get_payload(decode=True)
+
+    if len(msg_body) == 0:
+        msg_soup.find('body').text
+
     msg_body.replace('\r','').replace('\n','')
    
     text['message']=msg_body
