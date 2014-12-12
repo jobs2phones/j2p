@@ -7,6 +7,7 @@ postgres_username: 'postgres_username'
 postgres_password: 'postgres_password'
 postgres_db: 'postgres_db_name'
 data_dir: 'data_directory'
+searches: {"category1": ["job_search_term1", "job_searchterm2"], "category2": ["job_search_term3"]}
 start_message: 'Welcome to Jobs2Phones. This is the text message sent to new users.'
 chosen_message: 'This is the message for after posting categories are chosen from the list.'
 stop_message: 'We are sorry to see you go. This is the message for after someone texts "STOP"'
