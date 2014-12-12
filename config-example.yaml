@@ -11,3 +11,4 @@ searches: {"category1": ["job_search_term1", "job_searchterm2"], "category2": ["
 start_message: 'Welcome to Jobs2Phones. This is the text message sent to new users.'
 chosen_message: 'This is the message for after posting categories are chosen from the list.'
 stop_message: 'We are sorry to see you go. This is the message for after someone texts "STOP"'
+demo_message: '215-345-4040;$18/hr;303 Airport Rd;Stock Person. This is the message sent when someone texts "DEMO"'

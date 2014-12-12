@@ -75,6 +75,10 @@ def read_mailbox_and_edit_users(M):
             send.send_text(cf['fromaddr'],cf['username'],cf['password'],text['sender'],
                 cf['start_message'])
             M.store(num , '+FLAGS', '\\Deleted') #This archives the message.
+        elif 'demo' in text['message'].lower() or 'list' in text['message'].lower():
+            send.send_text(cf['fromaddr'],cf['username'],cf['password'],text['sender'],
+                cf['demo_message'])
+            M.store(num , '+FLAGS', '\\Deleted') #This archives the message.
         elif len(choices_made) > 0:
             search_criteria = parse_choices(choices_made)
             if len(search_criteria) > 0:
