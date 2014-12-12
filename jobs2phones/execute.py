@@ -13,7 +13,7 @@ with open('../config.yaml') as f:
     cf = yaml.safe_load(f)
 
 def execute_compemploy():
-    search = cf['search']
+    search = cf['searches']
     for search_type in search.keys():
         for search_term in search[search_type]:
             scrape.read_rss_and_load(search_type,search_term,cf['data_dir'])
