@@ -28,7 +28,7 @@ def parse_text_message_from_email(msg):
         msg_body = msg.get_payload(decode=True)
 
     if len(msg_body) == 0:
-        msg_soup.find('body').text
+        msg_body = msg_soup.find('body').text
 
     msg_body.replace('\r','').replace('\n','')
    

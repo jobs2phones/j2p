@@ -9,11 +9,13 @@ def read_rss_and_load(search_type,search_term,directory):
     search_directory = directory + '/' + search_term + '/'
     clist_rss = 'http://philadelphia.craigslist.org/search/'+search_type+'?query='+search_term+'&s=0&format=rss'
     feed = feedparser.parse(clist_rss)
+    print clist_rss
     link_name=feed['entries'][0].id
     file_name=link_name[link_name.rfind('/')+1:]
 
     if not os.path.exists(search_directory):
         os.makedirs(search_directory)
+    print str(len(feed['entries'])) + 'found'
     for entry in feed['entries']:
        load_craigs_page(entry,search_directory)
 
@@ -41,7 +43,7 @@ def load_craigs_page(entry,search_directory):
         response = urlopen(req).read()
         soup = BeautifulSoup(response)
         post_body_str = str(soup.find(id='postingbody'))
-
+	print 'Adding post with id: ' + str(post_id)
         post_id_str = soup.find('p','postinginfo',text=re.compile('post id'))
         post_id = str([int(s) for s in post_id_str.text.split() if s.isdigit()][0])
         f = open(search_directory+post_id+'.html','w')

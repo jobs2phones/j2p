@@ -1,7 +1,6 @@
 import execute
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-execute.execute_compemploy()
 
 scheduler = BlockingScheduler()
 scheduler.add_job(execute.execute_compemploy,'interval',hours=1)
